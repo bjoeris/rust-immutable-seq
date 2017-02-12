@@ -2,6 +2,7 @@
 use std::iter;
 use std::ops;
 use std::convert;
+use std::cmp;
 
 use lazy::Lazy;
 
@@ -221,6 +222,34 @@ macro_rules! seq {
 impl<T:'static> Clone for Seq<T> {
     fn clone(&self) -> Seq<T> {
         Seq(self.inner().clone())
+    }
+}
+
+impl<T:'static> PartialEq for Seq<T>
+    where T: PartialEq
+{
+    fn eq(&self, other: &Seq<T>) -> bool {
+        self.iter().eq(other.iter())
+    }
+}
+
+impl<T:'static> Eq for Seq<T>
+    where T: Eq
+{}
+
+impl<T:'static> PartialOrd for Seq<T>
+    where T: PartialOrd
+{
+    fn partial_cmp(&self, other: &Seq<T>) -> Option<cmp::Ordering> {
+        self.iter().partial_cmp(other.iter())
+    }
+}
+
+impl<T:'static> Ord for Seq<T>
+    where T: Ord
+{
+    fn cmp(&self, other: &Seq<T>) -> cmp::Ordering {
+        self.iter().cmp(other.iter())
     }
 }
 
