@@ -181,19 +181,34 @@ impl<T:'static> Seq<T> {
 ///
 /// ```
 /// # #[macro_use]
-/// # eternal crate immutable_seq;
+/// # extern crate immutable_seq;
 /// # use immutable_seq::Seq;
 /// # fn main() {
 /// let seq: Seq<i32> = seq![1, 2, 3];
 /// # }
 /// ```
+///
+/// Alternatively, a `Seq` consisting of several copies of the same value can be created using the following syntax:
+///
+/// ```
+/// # #[macro_use]
+/// # extern crate immutable_seq;
+/// # use immutable_seq::Seq;
+/// # fn main() {
+/// let seq: Seq<i32> = seq![1 ; 3];
+/// assert_eq!(seq![1 ; 3], seq![1, 1, 1]);
+/// # }
+/// ```
 #[macro_export]
 macro_rules! seq {
     () => {
-        Seq::empty()
+        $crate::Seq::empty()
     };
     ($e0: expr $(, $e: expr)*) => {
         seq!($($e),*).push_front($e0)
+    };
+    ($e: expr ; $n: expr) => {
+        ::std::iter::repeat($e).take($n).collect::<$crate::Seq<_>>()
     };
 }
 
