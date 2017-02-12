@@ -21,6 +21,7 @@ use self::Inner::{Evaluated, EvaluationInProgress, Unevaluated, Redirect};
 /// assert_eq!(*thunk, 7u32);
 /// # }
 /// ```
+#[doc(hidden)]
 #[macro_export]
 macro_rules! lazy {
     ($($e: stmt);*) => {
@@ -28,6 +29,7 @@ macro_rules! lazy {
     }
 }
 
+#[doc(hidden)]
 #[macro_export]
 macro_rules! lazy_val {
     ($($e: stmt);*) => {
@@ -35,6 +37,7 @@ macro_rules! lazy_val {
     }
 }
 
+#[doc(hidden)]
 #[macro_export]
 macro_rules! lazy_redirect {
     ($($e: stmt);*) => {

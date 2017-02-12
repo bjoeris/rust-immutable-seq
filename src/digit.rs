@@ -143,6 +143,7 @@ impl<'a, T:'a, M:'a> Iterator for Iter<'a, T, M> {
     }
 }
 
+#[doc(hidden)]
 #[macro_export]
 macro_rules! digit {
     ($e0: expr) => {
@@ -159,6 +160,7 @@ macro_rules! digit {
     };
 }
 
+#[doc(hidden)]
 #[macro_export]
 macro_rules! opt_digit {
     () => {
@@ -169,6 +171,7 @@ macro_rules! opt_digit {
     }
 }
 
+#[doc(hidden)]
 #[macro_export]
 macro_rules! build_digit {
     ($($f0: expr, $f1: expr, $f2: expr),+) => {
@@ -185,6 +188,7 @@ macro_rules! build_digit {
     };
 }
 
+#[doc(hidden)]
 #[macro_export]
 macro_rules! add_digits {
     ( ; $($e: expr),*) => {

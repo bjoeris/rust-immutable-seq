@@ -45,6 +45,7 @@ pub fn node3<T,M>(left: Lazy<Node<T,M>>, middle: Lazy<Node<T,M>>, right: Lazy<No
     }
 }
 
+#[doc(hidden)]
 #[macro_export]
 macro_rules! node {
     ($left: expr, $right: expr) => {
