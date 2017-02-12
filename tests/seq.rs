@@ -1,7 +1,7 @@
 #[macro_use]
 extern crate immutable_seq;
 
-use immutable_seq::seq::Seq;
+use immutable_seq::Seq;
 
 #[test]
 fn test_iter_empty() {

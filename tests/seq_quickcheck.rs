@@ -7,7 +7,7 @@ use std::fmt;
 
 use quickcheck::{Gen, Arbitrary};
 
-use immutable_seq::seq::Seq;
+use immutable_seq::Seq;
 
 #[derive(Clone,Copy,PartialEq,Eq,Hash,PartialOrd,Debug)]
 struct Slot(usize);

@@ -2,13 +2,13 @@
 #[macro_use(debug_unreachable)]
 extern crate debug_unreachable;
 
-pub mod zero;
+mod zero;
 #[macro_use]
-pub mod lazy;
-pub mod measure;
-pub mod node;
+mod lazy;
+mod measure;
+mod node;
 #[macro_use]
-pub mod digit;
-pub mod finger_tree;
-pub mod seq;
-pub use seq::Seq;
+mod digit;
+mod finger_tree;
+mod seq;
+pub use seq::*;
