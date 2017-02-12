@@ -2,7 +2,7 @@
 
 **Contents**
 
-[API Docs](https://bjoeris.github.io/rust-immutable-seq/)
+[API Docs](https://docs.rs/immutable-seq/)
 
 * [About](#about)
 * [Usage](#usage)
