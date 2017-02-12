@@ -343,19 +343,6 @@ fn viewl_node<T,M>(tree: &Lazy<FingerTree<T,M>>) -> (Option<&Node<T,M>>, Lazy<Fi
     }
 }
 
-pub fn viewl<T,M>(tree: &Lazy<FingerTree<T,M>>) -> (Option<&T>, Lazy<FingerTree<T,M>>)
-    where T: Measure<M> + 'static,
-          M: Add<Output=M> + Zero + Copy + 'static
-{
-    match viewl_node(tree) {
-        (None,rem) => (None,rem),
-        (Some(node), rem) => match node {
-            &Leaf(ref x) => (Some(x), rem),
-            _ => unsafe { debug_unreachable!() }
-        },
-    }
-}
-
 pub fn pop_front<T,M>(tree: &Lazy<FingerTree<T,M>>) -> Lazy<FingerTree<T,M>>
     where T: Measure<M> + 'static,
           M: Add<Output=M> + Zero + Copy + 'static
@@ -391,19 +378,6 @@ fn viewr_node<T,M>(tree: &Lazy<FingerTree<T,M>>) -> (Lazy<FingerTree<T,M>>, Opti
                     (remx, Some(x0))
                 }
             }
-    }
-}
-
-pub fn viewr<T,M>(tree: &Lazy<FingerTree<T,M>>) -> (Lazy<FingerTree<T,M>>, Option<&T>)
-    where T: Measure<M> + 'static,
-          M: Add<Output=M> + Zero + Copy + 'static
-{
-    match viewr_node(tree) {
-        (rem, None) => (rem, None),
-        (rem, Some(node)) => match node {
-            &Leaf(ref x) => (rem, Some(x)),
-            _ => unsafe { debug_unreachable!() }
-        }
     }
 }
 

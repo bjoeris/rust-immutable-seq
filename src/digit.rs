@@ -207,22 +207,6 @@ macro_rules! add_digits {
     }
 }
 
-pub fn add_2_digits<T,M>(d0: Digit<T,M>, d1: Digit<T,M>)
-                    -> Digit<T,M>
-    where T: Measure<M> + 'static,
-          M: ops::Add<Output=M> + Copy + 'static
-{
-    add_digits!(d0, d1 ; )
-}
-
-pub fn add_3_digits<T,M>(d0: Digit<T,M>, d1: Digit<T,M>, d2: Digit<T,M>)
-                    -> Digit<T,M>
-    where T: Measure<M> + 'static,
-          M: ops::Add<Output=M> + Copy + 'static
-{
-    add_digits!(d0, d1, d2 ; )
-}
-
 macro_rules! lookup {
     ($pred: expr, $i: expr ; $n0: expr) => {
         node::lookup($pred, $i, $n0)
