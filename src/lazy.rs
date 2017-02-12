@@ -1,3 +1,5 @@
+// This code is based on code from Jonathan Reem's rust-lazy library (https://github.com/reem/rust-lazy)
+
 use std::ops::Deref;
 use std::cell::UnsafeCell;
 use std::rc::Rc;
