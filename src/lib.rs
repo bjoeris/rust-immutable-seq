@@ -11,3 +11,4 @@ pub mod node;
 pub mod digit;
 pub mod finger_tree;
 pub mod seq;
+pub use seq::Seq;
