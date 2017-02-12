@@ -34,7 +34,7 @@ The `Seq` implements an API similar to `Vec`, with the added advantage that prev
 
 * Create a sequence with some values
   ```rust
-  let seq1 : Seq<i32> = seq![1, 2, 3];
+  let seq1: Seq<i32> = seq![1, 2, 3];
   ```
   
 * Add an element to the beginninng. *Note:* this creates a *new* sequence, with the element added, but does not change the original sequence.
