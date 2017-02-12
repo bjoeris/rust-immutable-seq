@@ -3,6 +3,21 @@ name = "immutable-seq"
 version = "0.1.0"
 authors = ["Benson Joeris <bjoeris@gmail.com>"]
 
+description = "Immutable sequence data structure"
+documentation = "https://docs.rs/immutable-seq"
+repository = "https://github.com/bjoeris/rust-immutable-seq"
+
+readme = "README.md"
+
+keywords = [ "immutable", "collection", "data-structure", "sequence" ]
+
+categories = [ "algorithms", "data-structures" ]
+
+license = "MIT"
+
+[badges]
+travis-ci = { repository = "https://travis-ci.org/bjoeris/rust-immutable-seq" }
+
 [dependencies]
 #lazy = { git = "https://github.com/bjoeris/rust-lazy.git" }
 # lazy = { path = "../rust-lazy" }
