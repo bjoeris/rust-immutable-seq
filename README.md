@@ -28,7 +28,7 @@ The `Seq` implements an API similar to `Vec`, with the added advantage that prev
   
   use immutable_seq::Seq;
   ```
-  *(`#[macro_use]` is only required to enable the seq! macro, shown below.)*
+  *(`#[macro_use]` is only required to enable the `seq!` macro, shown below.)*
   
 ## Examples
 
