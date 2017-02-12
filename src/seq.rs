@@ -3,6 +3,7 @@ use std::iter;
 use std::ops;
 use std::convert;
 use std::cmp;
+use std::fmt;
 
 use lazy::Lazy;
 
@@ -24,7 +25,6 @@ impl<T> Measure<usize> for Item<T> {
 ///
 /// This implementation is based on Haskell's Data.Sequence library (http://hackage.haskell.org/package/containers/docs/Data-Sequence.html), and the following paper:
 /// * Ralf Hinze and Ross Paterson, "Finger trees: a simple general-purpose data structure", Journal of Functional Programming 16:2 (2006) pp 197-217. http://staff.city.ac.uk/~ross/papers/FingerTree.html
-#[derive(Debug)]
 pub struct Seq<T> (Lazy<FingerTree<Item<T>,usize>>);
 
 impl<T:'static> Seq<T> {
@@ -243,6 +243,14 @@ impl<T:'static> Ord for Seq<T>
 {
     fn cmp(&self, other: &Seq<T>) -> cmp::Ordering {
         self.iter().cmp(other.iter())
+    }
+}
+
+impl<T:'static> fmt::Debug for Seq<T>
+    where T: fmt::Debug
+{
+    fn fmt(&self, fmt: &mut fmt::Formatter) -> fmt::Result {
+        fmt.debug_list().entries(self.iter()).finish()
     }
 }
 
