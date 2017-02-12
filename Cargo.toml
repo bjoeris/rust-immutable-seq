@@ -1,6 +1,6 @@
 [package]
 name = "immutable-seq"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Benson Joeris <bjoeris@gmail.com>"]
 
 description = "Immutable sequence data structure"
